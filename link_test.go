@@ -48,7 +48,12 @@ func TestParse(t *testing.T) {
 		t.Errorf("expected len: 2, got: %d", len(links))
 	}
 
-	// Check if nested text is parsed correctly
+	// Check if the texts are parsed correctly
+	expected = "Check me out on twitter"
+	if text := links[0].Text; text != expected {
+		t.Errorf("expected text: %s\ngot: %s", expected, text)
+	}
+
 	expected = "Gophercises is on Github!"
 	if text := links[1].Text; text != expected {
 		t.Errorf("expected text: %s\ngot: %s", expected, text)
